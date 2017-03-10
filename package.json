@@ -1,0 +1,16 @@
+{
+  "name": "wangyiapi",
+  "version": "1.0.0",
+  "description": "爬虫项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "author": "Taro",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "express": "^4.15.2",
+    "superagent": "^3.5.0"
+  }
+}
