@@ -16,9 +16,11 @@ http://localhost:3000/recommendLst
 http://localhost:3000/playlist/:playlistId
 http://localhost:3000/song_list/:playlistId
 ```
-Test Address
+
+
+以下地址为测试API
 ```
-http://wymusic.butterfly.mopaasapp.com/recommendLst
-http://wymusic.butterfly.mopaasapp.com/playlist/:playlistId
-http://wymusic.butterfly.mopaasapp.com/song_list/:playlistId
+http://wymusic.butterfly.mopaasapp.com/recommend_list
+http://wymusic.butterfly.mopaasapp.com/play_list/361904088
+http://wymusic.butterfly.mopaasapp.com/song_list/361904088
 ```
