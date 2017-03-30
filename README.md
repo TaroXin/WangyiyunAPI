@@ -18,7 +18,7 @@ http://localhost:3000/song_list/:playlistId
 ```
 
 
-以下地址为测试API
+以下地址为测试API, 仅供测试, 不推荐直接使用, API随时会变化, 想要使用请直接Fork或者下载代码到本地运行
 ```
 // 获得推荐歌单列表
 http://wymusic.butterfly.mopaasapp.com/recommend_list
