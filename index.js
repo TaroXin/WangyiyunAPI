@@ -220,11 +220,13 @@ app.get('/song_list/:playlistId', function(req, res){
 
 });
 
+var host = (process.env.VCAP_APP_HOST || 'localhost');
+var port = (process.env.VCAP_APP_PORT || 3000);
 /**
  * 开启express服务,监听本机3000端口
  * 第二个参数是开启成功后的回调函数
  */
-var server = app.listen(3000, function(){
+var server = app.listen(port, host, function(){
     // 如果 express 开启成功,则会执行这个方法
     var port = server.address().port;
 
