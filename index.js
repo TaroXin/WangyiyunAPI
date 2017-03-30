@@ -1,3 +1,6 @@
+/**
+ * 示例文件
+ */
 
 // 初始化 express
 var app = require('express')();

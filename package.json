@@ -4,7 +4,8 @@
   "description": "爬虫项目",
   "main": "index.js",
   "scripts": {
-    "test": "node index"
+    "test": "node index",
+    "start-api":"node app\\scripts\\api.js"
   },
   "author": "Taro",
   "license": "ISC",
