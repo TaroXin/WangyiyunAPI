@@ -201,7 +201,12 @@ app.get('/song_list/:playlistId', function(req, res){
 
 
 // 使用
-app.listen(3000, function(){
-    console.log('Express app listening at http://localhost:3000');
+
+
+var host = (process.env.VCAP_APP_HOST || 'localhost');
+var port = (process.env.VCAP_APP_PORT || 3000);
+var server = app.listen(port, host, function(){
+    var port = server.address().port;
+    console.log('WangyiyunAPI Server listening at http://' + host + ':' + port);
 });
 
