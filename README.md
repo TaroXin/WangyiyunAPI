@@ -20,7 +20,12 @@ http://localhost:3000/song_list/:playlistId
 
 以下地址为测试API
 ```
+// 获得推荐歌单列表
 http://wymusic.butterfly.mopaasapp.com/recommend_list
+// 根据歌单ID 获得歌单详细信息
 http://wymusic.butterfly.mopaasapp.com/play_list/361904088
+// 根据歌单ID 获得歌单歌曲列表
 http://wymusic.butterfly.mopaasapp.com/song_list/361904088
+// 获取首页轮播图列表
+http://wymusic.butterfly.mopaasapp.com/index_banner
 ```

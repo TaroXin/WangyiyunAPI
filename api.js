@@ -198,9 +198,41 @@ app.get('/song_list/:playlistId', function(req, res){
 });
 
 // 获得网易云音乐主页banner
+app.get('/index_banner', function(req, res){
 
+    var requestUrl = 'http://music.163.com/discover';
+    // 定义返回对象
+    var resObj = {
+        code: 200,
+        message: "加载成功",
+        data: {}
+    };
 
-// 使用
+    request.get(requestUrl)
+        .end(function(err, _response){
+
+            if (!err) {
+
+                // 成功返回 HTML
+                var $ = cheerio.load(_response.text,{decodeEntities: false});
+                // 获得歌单 dom
+                var bannerScript = $('script').eq(2);
+                var bannerString = bannerScript.html().replace(/(^\s+)|(\s+$)/g,"").replace(/[\r\n]/g, "");
+                bannerString = bannerString.substr(bannerString.indexOf("["), bannerString.length - 2);
+                bannerString = eval(bannerString);
+                resObj.data = bannerString;
+
+            } else {
+                resObj.code = 404 ;
+                resObj.message = "获取API出现问题";
+                console.err('Get data error!');
+            }
+
+            res.send( resObj );
+
+        });
+
+});
 
 
 var host = (process.env.VCAP_APP_HOST || 'localhost');
