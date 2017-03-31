@@ -313,6 +313,8 @@ app.get('/top_list', function(req, res){
 
 });
 
+// 获得 mp3 路径
+
 
 var host = (process.env.VCAP_APP_HOST || 'localhost');
 var port = (process.env.VCAP_APP_PORT || 3000);
