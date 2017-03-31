@@ -27,5 +27,7 @@ http://wymusic.butterfly.mopaasapp.com/play_list/361904088
 // 根据歌单ID 获得歌单歌曲列表
 http://wymusic.butterfly.mopaasapp.com/song_list/361904088
 // 获取首页轮播图列表
-http://wymusic.butterfly.mopaasapp.com/index_banner
+http://wymusic.butterfly.mopaasapp.com/banner_list
+// 获取网易云音乐排行榜列表
+http://wymusic.butterfly.mopaasapp.com/top_list
 ```
