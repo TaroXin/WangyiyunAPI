@@ -1,11 +1,11 @@
 {
   "name": "wangyiapi",
   "version": "1.0.0",
-  "description": "爬虫项目",
-  "main": "index.js",
+  "description": "网易云音乐api项目",
+  "main": "api.js",
   "scripts": {
     "test": "node index",
-    "start-api":"node app\\scripts\\api.js"
+    "start-api":"node api"
   },
   "author": "Taro",
   "license": "ISC",
