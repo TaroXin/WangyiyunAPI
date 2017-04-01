@@ -32,6 +32,8 @@ http://wymusic.butterfly.mopaasapp.com/banner_list
 http://wymusic.butterfly.mopaasapp.com/top_list
 // 根据歌曲ID获得歌曲详细信息
 http://wymusic.butterfly.mopaasapp.com/song/468517654
+// 根据歌曲ID获得歌曲歌词信息
+http://wymusic.butterfly.mopaasapp.com/lrc/468517654
 
 ```
 

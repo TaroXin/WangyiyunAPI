@@ -354,6 +354,54 @@ app.get('/song/:songId', function(req, res){
 });
 
 
+// 根据歌曲ID获得歌曲歌词
+
+app.get('/lrc/:songId', function(req, res){
+
+    // 获得歌曲ID
+    var songId = req.params.songId;
+    // 定义请求 url
+    var requestUrl = 'http://music.163.com/api/song/lyric?os=pc&id=' + songId + '&lv=-1&kv=-1&tv=-1';
+    // 定义返回对象
+    var resObj = {
+        code: 200,
+        message: "加载成功",
+        data: {}
+    };
+
+    if (checkId(songId)) {
+        request.get(requestUrl)
+            .end(function(err, _response){
+
+                if (!err) {
+
+                    // 返回所有内容
+                    var wyres = JSON.parse(_response.text);
+                    if (wyres.code === 200) {
+                        delete wyres.code;
+                        resObj.data = wyres;
+                    } else {
+                        resObj.code = wyres.code;
+                        resObj.message = "获取API出现问题";
+                    }
+
+                } else {
+                    resObj.code = 404 ;
+                    resObj.message = "获取API出现问题";
+                    console.error('Get data error!');
+                }
+
+                res.send( resObj );
+
+            });
+    } else {
+        resObj.code = 404 ;
+        resObj.message = "参数异常";
+        res.send( resObj );
+    }
+
+});
+
 var host = (process.env.VCAP_APP_HOST || 'localhost');
 var port = (process.env.VCAP_APP_PORT || 3000);
 var server = app.listen(port, host, function(){
