@@ -314,7 +314,44 @@ app.get('/top_list', function(req, res){
 });
 
 // 根据歌曲 ID 获取歌曲详细信息
-// 获得 mp3 路径
+app.get('/song/:songId', function(req, res){
+
+    // 获得歌曲ID
+    var songId = req.params.songId;
+    // 定义请求 url
+    var requestUrl = 'http://music.163.com/api/song/detail/?id=' + songId + '&ids=[' + songId + ']';
+    // 定义返回对象
+    var resObj = {
+        code: 200,
+        message: "加载成功",
+        data: {}
+    };
+
+    if (checkId(songId)) {
+        request.get(requestUrl)
+            .end(function(err, _response){
+
+                if (!err) {
+
+                    // 返回所有内容
+                    resObj.data = JSON.parse(_response.text).songs;
+
+                } else {
+                    resObj.code = 404 ;
+                    resObj.message = "获取API出现问题";
+                    console.error('Get data error!');
+                }
+
+                res.send( resObj );
+
+            });
+    } else {
+        resObj.code = 404 ;
+        resObj.message = "参数异常";
+        res.send( resObj );
+    }
+
+});
 
 
 var host = (process.env.VCAP_APP_HOST || 'localhost');
