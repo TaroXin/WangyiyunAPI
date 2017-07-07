@@ -20,8 +20,7 @@ http://localhost:3000/song_list/:playlistId
 
 以下地址为测试API, 仅供测试, 不推荐直接使用, API随时会变化, 想要使用请直接Fork或者下载代码到本地运行
 
-[测试地址](http://wacxbapi.duapp.com/)
-
+// 测试地址已经删除, 请直接运行本地代码
 
 ## License
 
